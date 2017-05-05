@@ -31,4 +31,14 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns false if the target value exists only as a property, not a value', () => {
+    const ponies = {
+      'pony1': 'Fluttershy',
+      'pony2': 'Pinkie Pie',
+      'pony3': 'Rainbow Dash',
+      'pony4': 'Rarity'
+    };
+    expect(_.contains(ponies, 'pony1')).toBe(false);    
+  });
+
 });
