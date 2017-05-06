@@ -18,4 +18,10 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+
+  it('rejects strings without the letter a', () => {
+    const words = ['air', 'bird', 'cat', 'dog'];
+    const result = _.reject(words, word => _.indexOf(word, 'a') === -1);
+    expect(result).toEqual(['air', 'cat']);
+  });
 });
