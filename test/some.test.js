@@ -11,4 +11,16 @@ describe('some()', () => {
     expect(_.some(nums, num => num % 2 === 1)).toBe(false);
   });
 
+  it('returns true if any string contains the letter a', () => {
+    const words = ['air', 'bird', 'climb', 'dog'];
+    const result = _.some(words, word => _.indexOf(word, 'a') > -1);
+    expect(result).toEqual(true);
+  });
+
+  it('returns false if no string contains the letter a', () => {
+    const words = ['bird', 'climb', 'dog'];
+    const result = _.some(words, word => _.indexOf(word, 'a') > -1);
+    expect(result).toEqual(false);
+  });
+
 });
