@@ -17,5 +17,15 @@ describe('every()', () => {
       expect(_.every(nums, num => num % 2 === 1)).toBe(false);
     });
 
+    it('returns true if every word contains a tested letter', () => {
+      const words = ['air', 'bear', 'cat'];
+      expect(_.every(words, word => word.indexOf('a') !== -1));
+    });
+
+    it('returns false if not every word contains a tested letter', () => {
+      const words = ['air', 'bear', 'cat'];
+      expect(_.every(words, word => word.indexOf('r') !== -1));
+    });
+
   });
 });
