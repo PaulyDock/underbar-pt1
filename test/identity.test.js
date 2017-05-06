@@ -20,4 +20,8 @@ describe('identity()', () => {
     };
     expect(_.identity(val)).toBe(val);
   });
+
+  it('returns undefined if given undefined', () => {
+    expect(_.identity(undefined)).toBe(undefined);
+  });
 });
