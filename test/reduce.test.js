@@ -13,4 +13,10 @@ describe('reduce()', () => {
     expect(result).toEqual(15);
   });
 
+  it('builds a string by concatenating an array of strings', () => {
+    const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 
+    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    const result = _.reduce(alphabet, (str, letter) => str + letter, 'alphabet = ');
+    expect(result).toEqual('alphabet = abcdefghijklmnopqrstuvwxyz');
+  });
 });
