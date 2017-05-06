@@ -26,4 +26,8 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('returns the index of the third entry in an array with length greater than 2', () => {
+    const arr = ['arrow', 'brick', 'cat', 'dog', 'elephant'];
+    expect(_.indexOf(arr, 'cat')).toBe(2);
+  });
 });
