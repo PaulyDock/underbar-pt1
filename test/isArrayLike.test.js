@@ -18,4 +18,13 @@ describe('isArrayLike()', () => {
     };
     expect(_.isArrayLike(nonArrayLikeObj)).toBe(false);
   });
+
+  it('returns false for an iterable-appearing object without a length property', () => {
+    const iterableAppearingObjLackingLength = {
+      '1': 'one',
+      '2': 'two',
+      '3': 'three'
+    };
+    expect(_.isArrayLike(iterableAppearingObjLackingLength)).toBe(false);
+  });
 });
