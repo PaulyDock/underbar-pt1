@@ -39,5 +39,18 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+
+  it('can duplicate functionality of _.map()', () => {
+    const names = ['Anne', 'Barry', 'Carl'];
+    var greetingAggregate = [];
+    const greetings = ['Hi, Anne!', 'Hi, Barry!', 'Hi, Carl!'];
+    const greet = function(name) {
+      greetingAggregate.push(`Hi, ${name}!`);
+    }
+
+    _.each(names, greet);
+    expect(greetingAggregate).toEqual(greetings);
+  });
+
 });
 
