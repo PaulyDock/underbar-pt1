@@ -23,4 +23,15 @@ describe('filter()', () => {
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
   });
+
+  it('returns the original array if all elements pass', () => {
+    const evenNums = [2, 4, 6, 8, 10];
+    expect(_.filter(evenNums, num => num % 2 === 0)).toEqual(evenNums);
+  });
+
+  it('returns an empty array if all elements fail', () => {
+    const evenNums = [2, 4, 6, 8, 10];
+    expect(_.filter(evenNums, num => num % 2 === 1)).toEqual([]);
+  });
+  
 });
